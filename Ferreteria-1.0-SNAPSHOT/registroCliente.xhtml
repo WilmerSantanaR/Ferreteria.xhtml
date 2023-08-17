@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+    <link rel="icon" href="../imagenes/" />
+    <link rel="stylesheet" href="../CSS/registroCliente.css" />
+    <title>Registro</title>
+</h:head>
+<h:body>
+    <!-- Inicia encabezado -->
+    <div class="encabezado">
+        <header>
+            <div class="titulo">
+                <h1>FERRETERIA MEISSEN</h1>
+            </div>
+            <div class="logo">
+                <h:graphicImage library="imagenes" name="ferreteria.jpeg" alt="logo ferreteria" />
+            </div>
+        </header>
+        <nav class="navbar">
+            <div class="lista">
+                <a href="index.xhtml" class="Catalogo">Catalogo</a>
+                <a href="#" class="Pintura">Pintura</a>
+                <a href="elctricas.xhtml" class="Electricas">Electricas</a>
+                <a href="#" class="Herramientas_Manuales">Herramientas Manuales</a>
+                <a href="#" class="Accesorios">Accesorios</a>
+                <button class="btn-login">
+                    <a class="btn-login" href="loginCliente.xhtml">Acceder</a>
+                </button>
+                <button class="btn-login">
+                    <a class="btn-login" href="registroCliente.xhtml">Regístrate</a>
+                </button>
+            </div>
+        </nav>
+    </div>
+    <!-- Fin encabezado -->
+
+    <h:form class="login">
+        <h2>Regístrate</h2>
+        <div class="contenedor-form">
+            <h:selectOneMenu id="tipo_documento" value="#{bean.tipoDocumento}">
+                <f:selectItem itemValue="na" itemLabel="Tipo Documento" />
+                <f:selectItem itemValue="cc" itemLabel="Cédula de Ciudadanía" />
+                <f:selectItem itemValue="ce" itemLabel="Cédula Extrangeria" />
+            </h:selectOneMenu>
+            <h:inputText id="Documento">
+                <f:passThroughAttribute name="placeholder" value="Documento" />
+            </h:inputText>
+            <h:inputText id="Nombres">
+                <f:passThroughAttribute name="placeholder" value="Nombres" />
+            </h:inputText>
+            <h:inputText id="Apellidos">
+                <f:passThroughAttribute name="placeholder" value="Apellidos" />
+            </h:inputText>
+            <h:inputText id="CorreoElectronico">
+                <f:passThroughAttribute name="placeholder" value="Correo Electrónico" />
+            </h:inputText>
+            <h:inputSecret id="Contraseña">
+                <f:passThroughAttribute name="placeholder" value="Contraseña" />
+            </h:inputSecret>
+            <h:inputSecret id="ConfirmarContraseña">
+                <f:passThroughAttribute name="placeholder" value="Confirmar Contraseña" />
+            </h:inputSecret>
+            <h:selectBooleanCheckbox id="tratamiento-datos" value="#{bean.aceptaTratamientoDatos}" />
+            <h:outputLabel for="tratamiento-datos">Acepto tratamiento de datos</h:outputLabel>
+            <h:commandButton value="Registrar" styleClass="btn-ingresar" />
+
+        </div>
+    </h:form>
+    <footer>
+        <h4>Ferreteria Meissen</h4>
+        <div class="enlaces">
+            <ul>
+                <li><a href="index.xhtml">Catalogo</a></li>
+                <li><a href="#">Pintura</a></li>
+                <li><a href="elctricas.xhtml">Electricas</a></li>
+                <li><a href="#">Herramientas Manuales</a></li>
+                <li><a href="#">Accesorios</a></li>
+            </ul>
+        </div>
+        <h4>Redes sociales</h4>
+        <div class="sociales">
+            <div class="sociales-link">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+</h:body>
+</html>

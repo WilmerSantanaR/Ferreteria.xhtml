@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../CSS/ventas.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+    <title>Ventas</title>
+</h:head>
+<h:body>
+    <header>
+        <div class="titulo">
+            <h1>FERRETERIA MEISSEN</h1>
+        </div>
+        <div class="logo">
+            <h:graphicImage library="imagenes" name="ferreteria.jpeg" alt="logo ferreteria" />
+        </div>
+    </header>
+    <nav class="navbar">
+            <div class="lista">
+                <a href="index.xhtml" class="Catalogo">Catalogo</a>
+                <a href="#" class="Pintura">Pintura</a>
+                <a href="elctricas.xhtml" class="Electricas">Electricas</a>
+                <a href="#" class="Herramientas_Manuales">Herramientas Manuales</a>
+                <a href="#" class="Accesorios">Accesorios</a>
+                <button class="btn-login">
+                    <a class="btn-login" href="loginCliente.xhtml">Acceder</a>
+                </button>
+                <button class="btn-login">
+                    <a class="btn-login" href="registroCliente.xhtml">Regístrate</a>
+                </button>
+            </div>
+        </nav>
+    <div id="contenido">
+        <div id="menu-lateral">
+            <h3>Administrador</h3>
+            <div id="foto">
+                <h:graphicImage library="imagenes" name="administrador ferreteria.jpg" alt="" />
+            </div>
+            <div class="nom-usuario">
+                <h3>Nombre Usuario</h3>
+            </div>
+            <h:selectOneMenu id="selec-admin" onchange="window.location.href = this.value;">
+                <f:selectItem itemValue="" itemLabel="Opciones" />
+                <f:selectItem itemValue="index.xhtml" itemLabel="Inicio" />
+                <f:selectItem itemValue="inventario.xhtml" itemLabel="Gestión Catalogo e Inventario" />
+                <f:selectItem itemValue="gestionarFuncionarios.xhtml" itemLabel="Gestionar Usuarios" />
+                <f:selectItem itemValue="ventas.xhtml" itemLabel="Ventas" />
+            </h:selectOneMenu>
+
+        <div class="inventario">
+            <h4 id="titulo-tabla">Documento de Venta</h4>
+            <div id="conten-venta">
+                <h:form id="formulario-venta">
+                    <div class="input-izquierda">
+                        <h:outputLabel for="factura">Factura Nº</h:outputLabel>
+                        <h:inputText id="factura" />
+                        <h:form>
+                            <div class="placeholder" onclick="focusFactura()">
+                                
+                            </div>
+
+                            <h:inputText id="factura" />
+                        </h:form>
+
+                        <script>
+                            function focusFactura() {
+                                document.getElementById('form:factura').focus();
+                            }
+                        </script>
+                            <h:outputText value="Factura" />
+                        </h:panelGroup>
+                    </div>
+                    <div class="input-derecha">
+                        <h:outputLabel for="codigo">Código</h:outputLabel>
+                        <h:inputText id="codigo" />
+                        <h:form>
+                            <h:panelGroup layout="block" styleClass="placeholder">
+                                <h:outputText value="Placeholder Text" />
+                                <f:ajax event="click" onevent="focusCodigo" />
+                            </h:panelGroup>
+
+                            <h:inputText id="codigo" />
+                        </h:form>
+
+                        <script>
+                            function focusCodigo(event) {
+                                if (event.status === 'success') {
+                                    document.getElementById('form:codigo').focus();
+                                }
+                            }
+                        </script>
+                            <h:outputText value="Código" />
+                        </h:panelGroup>
+                    </div>
+                    <!-- Otros campos de entrada aquí -->
+                </h:form>
+            </div>
+            <div id="conten-botones">
+                <button id="btn-venta"><i class="far fa-save"></i><i class="fas fa-times-circle"></i> Cancelar</button>
+                <button id="btn-venta"><i class="fas fa-save"></i><i class="fas fa-arrow-circle-right"></i> Guardar</button>
+                <button id="btn-venta"><i class="fa-solid fa-plus"></i> Agregar</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slider">
+        <ul>
+            <li>
+                <h:graphicImage library="imagenes" name="ferreteria-norte-banner.jpg" alt="Herramientas1" />
+            </li>
+            <li>
+                <h:graphicImage library="imagenes" name="herramientas-png.png" alt="Herramientas2" />
+            </li>
+            <li>
+                <h:graphicImage library="imagenes" name="slide1-1ferreteria.png" alt="Herramientas3" />
+            </li>
+            <li>
+                <h:graphicImage library="imagenes" name="ferreteria-ferromar-.jpg" alt="Herramientas4" />
+            </li>
+        </ul>
+    </div>
+    
+    <footer>
+        <h4>Ferreteria Meissen</h4>
+        <<div class="enlaces">
+        <ul>
+            <li><a href="index.xhtml">Catalogo</a></li>
+            <li><a href="#">Pintura</a></li>
+            <li><a href="elctricas.xhtml">Electricas</a></li>
+            <li><a href="#">Herramientas Manuales</a></li>
+            <li><a href="#">Accesorios</a></li>
+        </ul>
+    </div>
+        <h4>Redes sociales</h4>
+        <div class="sociales">
+            <div class="sociales-link">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+</h:body>
+</html>
+
